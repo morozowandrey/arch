@@ -1,0 +1,131 @@
+.fifth-screen {
+  overflow-x hidden
+
+  .screen-bg__pattern {
+    height 90%
+    margin-top 100px
+    top 0
+    background-image url("../images/pattern.png")
+  }
+
+  .info {
+    padding-top: 100px;
+    position: relative;
+    z-index: 10;
+    margin-bottom 20px
+
+    &-box {
+      height auto
+      text-align center
+    }
+
+    &-plans {
+      position relative
+
+      &-plan {
+        width 380px
+        margin-right 15px
+
+        text-align center
+        display inline-block
+        background-color white
+
+        .bold-heading {
+          margin-top 50px
+          margin-bottom 40px
+        }
+
+        .plan-heading {
+          margin-bottom 40px
+        }
+
+        .decor-block {
+          margin-bottom 35px
+        }
+
+        .common-text {
+          margin-bottom 100px
+        }
+      }
+
+      &-plan:hover {
+        background-color mainBlack
+        color white
+
+        .bold-heading, .plan-heading, .common-text, .bold-heading_massive, .plan-info__term, .plan-info__link {
+          color white
+        }
+      }
+
+      &__plan:last-of-type {
+        margin-right 0
+      }
+    }
+
+    &-plans:before {
+      content: '';
+      background-image: url(../images/pattern.png);
+      height: 102%;
+      width: 1000%;
+      position: absolute;
+      top: 0;
+      left: 4px;
+      right: -902px;
+      z-index: -1;
+    }
+
+    .block-heading {
+      margin-bottom 40px
+      text-align left
+      padding-left 20px
+    }
+  }
+
+  .plan-info {
+    margin-bottom 30px
+
+    &__term {
+      color mainGray
+      display inline-block
+      margin-left 20px
+    }
+
+    &__link {
+      color mainGray
+      border-bottom 1px dashed mainGray
+      margin-left 70px
+    }
+  }
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+//ADAPTIVE
+
+@media screen and (max-width: 1200px) {
+  .fifth-screen .info-plans-plan {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+
+  .fifth-screen .info-plans:before {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fifth-screen .info-plans-plan {
+    width: 60%;
+    margin-right 0
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fifth-screen .info-plans-plan {
+    width: 90%;
+    margin-right 0
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,155 @@
+.header {
+  width 100%
+  position: absolute;
+  z-index: 20;
+  margin-bottom 50px;
+  background-color: white;
+
+  &-nav-box {
+    float: right;
+    vertical-align middle
+    margin-top 35px
+    margin-right 20px
+    position relative
+  }
+
+  &-nav {
+    font-size 0
+    width: 100%;
+
+    &__item, &__item_current {
+      padding: 38px 15px 8px;
+      color: mainBlack;
+      text-transform: uppercase;
+      font-size: 12px;
+      max-width 300px
+    }
+
+    &__item:hover, &__item_current {
+      background-color: mainBlack;
+      color: white;
+      font-weight: bold;
+      font-family mediumff;
+    }
+
+    &__item_current {
+      background-color: mainRed;
+    }
+
+    &__item:last-of-type {
+      margin-bottom 50px
+    }
+
+    &-mobile_open {
+      display none
+    }
+
+    &-mobile_close, &-mobile_open {
+       float: right;
+       color: mainBlack;
+        position: relative;
+        z-index: 100;
+     }
+  }
+
+  &-logo {
+    padding-top 20px
+    margin-left 20px
+    float: left;
+    vertical-align middle
+    line-height: 0;
+
+    &__link {}
+
+    &__img {}
+  }
+}
+
+.header-nav.visible {
+  display: inline-block;
+  text-align center
+}
+
+.header-nav-mobile_open.hidden {
+  display: none;
+}
+
+.fixed-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+  .test {
+    width 100%
+    height: 100vh
+    background-color lightcyan
+  }.test2 {
+    width 100%
+    height: 100vh
+    background-color blue
+  }.test3 {
+    width 100%
+    height: 100vh
+    background-color darkblue
+  }.test4 {
+    width 100%
+    height: 100vh
+    background-color forestgreen
+  }.test5 {
+    width 100%
+    height: 100vh
+    background-color salmon
+  }
+
+//////////////////////////////////// ADAPTIVE //////////////////////////////////////
+
+@media screen and (max-width: 900px) {
+
+  .header-nav-box {
+    margin 0
+    float none
+  }
+
+  .header-nav {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header-nav__item {
+    font-size: 16px;
+    min-width 150px
+    display block
+    margin: 0 auto;
+  }
+
+  .header-nav-mobile_close, .header-nav-mobile_open {
+    margin-top: 15px;
+    margin-right: 20px;
+  }
+
+  .header-nav-mobile_open {
+    display inherit
+  }
+
+  .header-nav__item:first-of-type {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  .header-nav__item, .header-nav__item_current {
+    padding: 35px 10px 8px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-height: 500px) {
+
+  .header-nav__item, .header-nav__item_current {
+    padding: 20px 10px 8px;
+  }
+}

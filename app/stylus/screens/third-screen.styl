@@ -1,0 +1,146 @@
+.third-screen {
+  overflow-x hidden
+
+  .info {
+    padding-top: 100px;
+    position: relative;
+    z-index: 10;
+    margin-bottom 20px
+
+    &-box {
+      height auto
+      text-align center
+    }
+
+    &-plans {
+      position relative
+
+      &-plan {
+        width 380px
+        margin-right 15px
+        margin-bottom 30px
+
+        text-align left
+        display inline-block
+        background-color white
+
+        .bold-heading {
+          vertical-align: middle;
+          display inline-block
+          margin-left 30px
+        }
+
+        .plan-heading {
+          margin-bottom 40px
+        }
+
+        .decor-block {
+          height: 40px;
+          transform: rotate(25deg);
+          width: 6px;
+          display inline-block
+        }
+
+        .common-text {
+          margin-left 30px
+          margin-bottom 35px
+          font-size 14px
+          padding-right 50px
+        }
+      }
+
+      &-plan:hover {
+        background-color mainBlack
+        color white
+
+        .bold-heading, .plan-heading, .common-text, .bold-heading_massive {
+          color white
+        }
+      }
+
+      &__plan:last-of-type {
+        margin-right 0
+      }
+    }
+
+    &-plans:before {
+      content: '';
+      background-image: url(../images/pattern.png);
+      height: 102%;
+      width: 1000%;
+      position: absolute;
+      left: 4px;
+      right: -902px;
+      z-index: -1;
+      opacity 0.7
+    }
+
+    .block-heading {
+      margin-bottom 40px
+      text-align left
+    }
+  }
+
+  .plan-info {
+    margin-bottom 30px
+
+    &__term {
+      color mainGray
+      display inline-block
+      margin-left 20px
+    }
+
+    &__link {
+      color mainGray
+      border-bottom 1px dashed mainGray
+      margin-left 70px
+    }
+  }
+
+  .plan-content {
+    margin-top 30px
+    margin-bottom 30px
+
+    &__caption {
+      margin-left: 30px;
+      display inline-block
+      vertical-align: middle;
+    }
+      .bold-heading_massive {
+        display inline-block
+      }
+    }
+  }
+
+
+///////////////////////////////////////////////////////////////////////////
+//ADAPTIVE
+
+@media screen and (max-width: 1200px) {
+  .third-screen .info-plans-plan {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+
+  .third-screen .info-plans:before {
+    height: 100%;
+  }
+
+  .block-heading {
+    padding-left 20px
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .third-screen .info-plans-plan {
+    width: 80%;
+    margin-right 0
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .third-screen .info-plans-plan .common-text {
+    padding-right: 20px;
+  }
+}

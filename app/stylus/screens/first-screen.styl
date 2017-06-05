@@ -1,0 +1,91 @@
+.first-screen {
+  overflow-x hidden
+
+  &-banner {
+    position relative
+    z-index 10
+    margin-bottom 55px
+
+    &-images {
+      margin-top 100px
+
+      &__logo {
+        margin-right 70px
+        margin-left 65px
+        display inline-block
+      }
+      &__img {
+        display inline-block
+      }
+    }
+
+    &-images:before {
+      content: '';
+      background-image: url(../images/pattern.png);
+      height: 49%;
+      width: 100%;
+      position: absolute;
+      top: 52%;
+      left: -0.5%;
+      z-index: -1;
+    }
+  }
+}
+
+.first-screen-banner .bold-heading {
+  margin-left 25%
+}
+
+
+////////////////////////////////////////////////////////////
+// ADAPTIVE
+
+@media screen and (max-width: 1220px) {
+  .first-screen-banner-images__img {
+    width 75%
+  }
+  .first-screen-banner-images__logo {
+    width 10%
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .first-screen-banner-images__logo {
+    margin-right: 30px;
+    margin-left: 25px;
+  }
+
+  .first-screen-banner {
+    margin-left: 50px;
+  }
+
+  .first-screen-banner .bold-heading {
+    margin-left: 17%;
+  }
+
+  .first-screen-banner {
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 800px)
+  .first-screen-banner {
+    margin-left: 0px;
+  }
+
+@media screen and (max-width: 768px) {
+
+  .first-screen-banner-images__logo {
+    margin-right: 15px;
+    margin-left: 10px;
+  }
+  .first-screen-banner-images {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .first-screen-banner-images__logo {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,116 @@
+.second-screen {
+
+  .slider {
+    height auto
+
+    &-box {
+      padding-top: 100px;
+      position relative
+      z-index 10
+      margin-bottom 70px
+    }
+
+    &-wrapper {
+      position: relative
+    }
+
+    &-box:before {
+      content: '';
+      background-image: url(../images/pattern.png);
+      height: 70%;
+      width: 1000%;
+      position: absolute;
+      top: 14%;
+      left: -914%;
+      z-index: -1;
+    }
+  }
+
+  .block-heading {
+    margin-bottom: 40px;
+  }
+}
+
+///////////////////////////////////SLIDER///////////////////////////////////////////
+
+.portfolio-slider {
+  margin: 0 -15px
+
+  &__slide {
+    max-height 550px
+
+    &-img {
+
+    }
+
+    .slide-info {
+      margin-top: 15px;
+
+      &__flatname {
+        display: inline-block;
+
+        text-transform uppercase
+        font-family mediumff
+        font-weight bold
+      }
+
+      &__area {
+        float: right;
+
+        &-value {
+          padding: 0 5px;
+          float right
+
+          background-color mainBlack
+          font-family mediumff
+          font-weight bolder
+          font-size 14px
+
+          color white
+        }
+      }
+     }
+  }
+
+////////////////////////////////SLICK THEME////////////////////////////////
+  .slick-slide {
+    padding: 0 15px
+  }
+
+  .slick-dots {
+    bottom: -40px;
+  }
+    
+  .slick-prev, .slick-next {
+    width: 50px;
+    height: 50px;
+    background-image: url("../images/slider-arrow-bg.jpg");
+    z-index: 20;
+  }
+
+  .slick-prev {
+    left: 14px
+  }
+
+  .slick-next {
+    right: 14px
+  }
+
+  .slick-prev:before, .slick-next:before {
+    font-family: iconicff;
+    font-size: 30px;
+    color: mainBlack;
+  }
+
+  .slick-next:before {
+    content: '\f2fb';
+  }
+
+  .slick-prev:before {
+    content: '\f2fa';
+  }
+////////////////////////////////EO SLICK THEME////////////////////////////////
+
+}
+
+  ///////////////////////////////////EO SLIDER///////////////////////////////////////////
