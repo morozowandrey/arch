@@ -1,3 +1,5 @@
+
+(function (){
 //////////////////////////////////NAVIGATION////////////////////////////////////////
 
 function checkSection () {    		//функция определяет видно сейчас секцию на экране или нет
@@ -49,39 +51,36 @@ $(document).scroll(function () {						//событие прокрутнки ст
 });
 
 //////////////////////////////////EO NAVIGATION////////////////////////////////////////
+})()
 
-
-
-$(window).on("load", function(){
-
-    // MOBILE MENU
-    $(".header-nav-mobile_open").on("click", function(e){
-        $(".header-nav, .header-nav-mobile_close").addClass("visible");
-        $(".header-nav-mobile_close").removeClass("hidden");
-        $(".header-nav-mobile_open").addClass("hidden");
-    })
-
-    $(".header-nav-mobile_close, .header-nav__item").on("click", function(e){
-        $(".header-nav, .header-nav-mobile_close").removeClass("visible");
-        $(".header-nav-mobile_close").addClass("hidden");
-        $(".header-nav-mobile_open").removeClass("hidden");
-    })
-
-    // FIXED MENU
-    $(window).scroll(function(){
-        if ($(this).scrollTop()) {
-            $(".header").addClass("fixed-nav");
-        } else {
-            $(".header").removeClass("fixed-nav");
-        };
-    });
-
-    if ($(window).width() <= 900) {
-        $(".header-nav").css("background-color", "white");
-    } else {
-        $(".header-nav").css("background-color", "inherit");
-    }
+// MOBILE MENU
+$(".header-nav-mobile_open").on("click", function(e){
+    $(".header-nav, .header-nav-mobile_close").addClass("visible");
+    $(".header-nav-mobile_close").removeClass("hidden");
+    $(".header-nav-mobile_open").addClass("hidden");
 });
+
+$(".header-nav-mobile_close, .header-nav__item").on("click", function(e){
+    $(".header-nav, .header-nav-mobile_close").removeClass("visible");
+    $(".header-nav-mobile_close").addClass("hidden");
+    $(".header-nav-mobile_open").removeClass("hidden");
+});
+
+// FIXED MENU
+$(window).scroll(function(){
+    if ($(this).scrollTop()) {
+        $(".header").addClass("fixed-nav");
+    } else {
+        $(".header").removeClass("fixed-nav");
+    };
+});
+
+if ($(window).width() <= 900) {
+    $(".header-nav").css("background-color", "white");
+} else {
+    $(".header-nav").css("background-color", "inherit");
+};
+
 
 // SLIDER
 (function () {
@@ -113,34 +112,130 @@ $(window).on("load", function(){
     }
 } )();
 
-// Pop-ups with content
+// // Pop-ups with content
+// ( function() {
+//     var popupInit = function (popupBox, popupTrigger, popupContent) {
+//         var popup = "#popup";
+//         $(popupTrigger).magnificPopup({
+//             callbacks: {
+//                 open: function() {
+//                 },
+//                 close: function() {
+//                     $(popup).html('');
+//                 }
+//             }
+//         });
+//         $(popupBox).on("click", function () {
+//             popup = $(this).find(popupTrigger).attr("href");
+//             $(popup).html($(this).find(popupContent).html());
+//         });
+//     };
+//     popupInit('.popup-box','.popup-trigger','.popup-content');
+// } )();
+
 ( function() {
-    var popupInit = function (popupBox, popupTrigger, popupContent) {
-        var popup = "#popup";
-        $(popupTrigger).magnificPopup({
-            callbacks: {
-                open: function() {
-                },
-                close: function() {
-                    $(popup).html('');
-                }
-            }
-        });
-        $(popupBox).on("click", function () {
-            popup = $(this).find(popupTrigger).attr("href");
-            $(popup).html($(this).find(popupContent).html());
-        });
-    };
-    popupInit('.popup-box','.popup-trigger','.popup-content');
+    $('.portfolio-slider_inner1').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
+} )();
+( function() {
+    $('.portfolio-slider_inner2').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
 } )();
 
-////////////////////////////////////////////////////////////////////////////////
-// loading preview image for video boxes
 ( function() {
-    if($('.video-box, .cases-video__box, .wakeup-video__box').length!=0){
-        $('.video-box, .cases-video__box, .wakeup-video__box').each(function(){
-            $(this).css('background-image',"url('https://img.youtube.com/vi/"+ $(this).find('.preview-video__play').attr("attrvideo") + "/sddefault.jpg')");
-            $(this).addClass('cases-video__box');
-        });
-    }
+    $('.portfolio-slider_inner3').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
 } )();
+( function() {
+    $('.portfolio-slider_inner4').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
+} )();
+( function() {
+    $('.portfolio-slider_inner5').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
+} )();
+( function() {
+    $('.portfolio-slider_inner6').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
+} )();
+( function() {
+    $('.portfolio-slider_inner7').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
+} )();
+( function() {
+    $('.portfolio-slider_inner8').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
+} )();
+( function() {
+    $('.portfolio-slider_inner9').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+		},
+    });
+} )();
+
+
+
+
+
+//
+// Dear maintainer:
+//
+// Once you are done trying to 'optimize' this routine,
+// and have realized what a terrible mistake that was,
+// please increment the following counter as a warning
+// to the next guy:
+//
+// total_hours_wasted_here = 16
+//
