@@ -17,10 +17,13 @@
 
       &-plan {
         width 380px
+        height: 230px;
+
         margin-right 17px
         margin-bottom 30px
 
-        text-align left
+        text-align: left;
+        vertical-align: top;
         display inline-block
         background-color white
 
@@ -39,6 +42,7 @@
           transform: rotate(25deg);
           width: 6px;
           display inline-block
+          vertical-align: middle;
         }
 
         .common-text {
@@ -108,6 +112,7 @@
     }
       .bold-heading_massive {
         display inline-block
+        vertical-align: middle;
       }
     }
   }
@@ -131,9 +136,16 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .third-screen .info-plans-plan {
+    height: 260px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .third-screen .info-plans-plan {
     width: 80%;
+    height: auto;
     margin-right 0
     margin-bottom: 40px;
   }

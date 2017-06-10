@@ -1,6 +1,6 @@
 .second-screen {
 
-  .slider {
+  .portfolio-slider {
     height auto
 
     &-box {
@@ -20,7 +20,7 @@
       height: 70%;
       width: 1000%;
       position: absolute;
-      top: 14%;
+      top: 13%;
       left: -920%;
       z-index: -1;
     }
@@ -34,17 +34,17 @@
 
 ///////////////////////////////////SLIDER///////////////////////////////////////////
 
-.portfolio-slider {
+.slider {
   margin: 0 -15px
 
-  &__slide {
+  .slide {
     max-height 610px
 
     &-img {
 
     }
 
-    .slide-info {
+    &-info {
       margin-top: 15px;
 
       &__flatname {
@@ -89,7 +89,7 @@
   .slick-prev, .slick-next {
     width: 50px;
     height: 50px;
-    background-image: url("../images/right-arrow-bg.jpg");
+    background-image: url("../images/slider-arrow-bg.jpg");
     z-index: 20;
   }
 
@@ -118,4 +118,17 @@
 
 }
 
-  ///////////////////////////////////EO SLIDER///////////////////////////////////////////
+.popup-slider {
+  height: auto !important;
+
+  &-slide {
+    text-align: center;
+
+    &__img {
+      display: inline-block !important;
+      max-height: 665px;
+    }
+  }
+}
+
+///////////////////////////////////EO SLIDER///////////////////////////////////////////

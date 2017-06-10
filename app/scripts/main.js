@@ -1,58 +1,3 @@
-
-(function (){
-//////////////////////////////////NAVIGATION////////////////////////////////////////
-
-function checkSection () {    		//функция определяет видно сейчас секцию на экране или нет
-    $(".screen").each(function(){	//проходим по всем секциям
-
-        var $this = $(this),
-            topEdge = $this.offset().top - 61,		//определяем верхний край секции (-200px что бы было видно 7ю секцию)
-            bottomEdge = topEdge + $this.height(),	//определяем нижний край секции
-            whereScroll = $(window).scrollTop();	//определяем где скролл на странице
-
-        if (topEdge < whereScroll && bottomEdge > whereScroll){		//если края у нас в окне то мы эту секцию видим
-
-            var currentId = $this.data("section");
-            reqLink = $(".header-nav__item").filter('[href="#' + currentId + '"]');	//определяем какую именно ссылку подсветить с помощью метода filter,
-            //фильтруем по тому href который совпадет с текущей секцией на экране
-            reqLink.closest('.header-nav__item').addClass('header-nav__item_current')	//подсвечивая классом active выделяем наш пункт
-                .siblings().removeClass('header-nav__item_current');					//удаляем посветку соседей
-        }
-    });
-}
-
-function showSection(section, isAnimate) {			//функция которая скролит страницу к нужной секции (секция которую нужно показать, анимированно или сразу)
-    var direction = section.replace(/#/, ''),		//удаляем решетку из названия так как оно берется из атрибута href который с решеткой в названии
-        reqSection = $('.screen').filter('[data-section="' + direction + '"]'),		//фильтруем по href какую именно секцию показать
-        reqSectionPos = reqSection.offset().top;	//определяем верхний край секции что бы при анимации проскролить именно к нему
-
-    if (isAnimate) {
-        $('body, html').animate({scrollTop: reqSectionPos}, 600);
-    } else {
-        $('body, html').scrollTop(reqSectionPos);
-    }
-}
-
-//////////////////////////////////EVENTS////////////////////////////////////////
-
-$(document).ready(function () {
-    $('.header-nav__item').on('click', function(e){	//клик по навигации для пользователя
-        e.preventDefault();
-
-        showSection($(this).attr('href'), true);		//вызывается функция showSection но у же с анимированным эффектом
-    });
-
-    showSection(window.location.hash, false);			//при загруке страницы определяем какой именно хэш стоит в адресе и притягиваем страницу к нужному месту
-
-});
-
-$(document).scroll(function () {						//событие прокрутнки страницы
-    checkSection()									//вызов функции проверяющей где находиться секция
-});
-
-//////////////////////////////////EO NAVIGATION////////////////////////////////////////
-})()
-
 // MOBILE MENU
 $(".header-nav-mobile_open").on("click", function(e){
     $(".header-nav, .header-nav-mobile_close").addClass("visible");
@@ -74,18 +19,98 @@ $(window).scroll(function(){
         $(".header").removeClass("fixed-nav");
     };
 });
-
-if ($(window).width() <= 900) {
+if ($(window).width() <= 1000) {
     $(".header-nav").css("background-color", "white");
 } else {
     $(".header-nav").css("background-color", "inherit");
 };
 
 
-// SLIDER
+
+
+//////////////////////////////////NAVIGATION////////////////////////////////////////
+(function (){
+    function checkSection () {    		//функция определяет видно сейчас секцию на экране или нет
+        $(".screen").each(function(){	//проходим по всем секциям
+
+            var $this = $(this),
+                topEdge = $this.offset().top - 61,		//определяем верхний край секции (-200px что бы было видно 7ю секцию)
+                bottomEdge = topEdge + $this.height(),	//определяем нижний край секции
+                whereScroll = $(window).scrollTop();	//определяем где скролл на странице
+
+            if (topEdge < whereScroll && bottomEdge > whereScroll){		//если края у нас в окне то мы эту секцию видим
+
+                var currentId = $this.data("section");
+                reqLink = $(".header-nav__item").filter('[href="#' + currentId + '"]');	//определяем какую именно ссылку подсветить с помощью метода filter,
+                //фильтруем по тому href который совпадет с текущей секцией на экране
+                reqLink.closest('.header-nav__item').addClass('header-nav__item_current')	//подсвечивая классом active выделяем наш пункт
+                    .siblings().removeClass('header-nav__item_current');					//удаляем посветку соседей
+            }
+        });
+    }
+
+    function showSection(section, isAnimate) {			//функция которая скролит страницу к нужной секции (секция которую нужно показать, анимированно или сразу)
+        var direction = section.replace(/#/, ''),		//удаляем решетку из названия так как оно берется из атрибута href который с решеткой в названии
+            reqSection = $('.screen').filter('[data-section="' + direction + '"]'),		//фильтруем по href какую именно секцию показать
+            reqSectionPos = reqSection.offset().top;	//определяем верхний край секции что бы при анимации проскролить именно к нему
+
+        if (isAnimate) {
+            $('body, html').animate({scrollTop: reqSectionPos}, 600);
+        } else {
+            $('body, html').scrollTop(reqSectionPos);
+        }
+    }
+
+    $(document).ready(function () {
+        $('.header-nav__item').on('click', function(e){	//клик по навигации для пользователя
+            e.preventDefault();
+
+            showSection($(this).attr('href'), true);		//вызывается функция showSection но у же с анимированным эффектом
+        });
+
+        showSection(window.location.hash, false);			//при загруке страницы определяем какой именно хэш стоит в адресе и притягиваем страницу к нужному месту
+
+    });
+
+    $(document).scroll(function () {						//событие прокрутнки страницы
+        checkSection()									//вызов функции проверяющей где находиться секция
+    });
+
+})()
+//////////////////////////////////EO NAVIGATION////////////////////////////////////////
+
+
+
+
+//////////////////////////////////BLOCKS HEIGHT FIX////////////////////////////////////////
+
+$(document).ready(function() {
+    function setEqualHeight(columns){
+        var tallestcolumn = 0;
+        columns.each(
+        
+        function(){
+        currentHeight = $(this).height();
+            
+            if(currentHeight > tallestcolumn){
+                tallestcolumn = currentHeight;
+            }
+        });
+
+        columns.height(tallestcolumn);
+    }
+
+        setEqualHeight($(".info-plans-box > div"));
+});
+//////////////////////////////////EO BLOCKS HEIGHT FIX////////////////////////////////////////
+
+
+
+
+//////////////////////////////////PORTFOLIO SLIDER////////////////////////////////////////
 (function () {
-    if ($('.portfolio-slider').length!=0){
-        $('.portfolio-slider').slick({
+    if ($('.slider').length!=0){
+        $('.slider').slick({
             dots: false,
             arrows: true,
             infinite: true,
@@ -111,121 +136,46 @@ if ($(window).width() <= 900) {
         });
     }
 } )();
-
-// // Pop-ups with content
-// ( function() {
-//     var popupInit = function (popupBox, popupTrigger, popupContent) {
-//         var popup = "#popup";
-//         $(popupTrigger).magnificPopup({
-//             callbacks: {
-//                 open: function() {
-//                 },
-//                 close: function() {
-//                     $(popup).html('');
-//                 }
-//             }
-//         });
-//         $(popupBox).on("click", function () {
-//             popup = $(this).find(popupTrigger).attr("href");
-//             $(popup).html($(this).find(popupContent).html());
-//         });
-//     };
-//     popupInit('.popup-box','.popup-trigger','.popup-content');
-// } )();
-
-( function() {
-    $('.portfolio-slider_inner1').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-( function() {
-    $('.portfolio-slider_inner2').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-
-( function() {
-    $('.portfolio-slider_inner3').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-( function() {
-    $('.portfolio-slider_inner4').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-( function() {
-    $('.portfolio-slider_inner5').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-( function() {
-    $('.portfolio-slider_inner6').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-( function() {
-    $('.portfolio-slider_inner7').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-( function() {
-    $('.portfolio-slider_inner8').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
-( function() {
-    $('.portfolio-slider_inner9').magnificPopup({
-        delegate: 'a',
-		type: 'image',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-		},
-    });
-} )();
+//////////////////////////////////EO PORTFOLIO SLIDER////////////////////////////////////////
 
 
+// $('body').on('click', function (event) {
+//     console.log(event.target);
+// });
+
+//////////////////////////////////POPUPS////////////////////////////////////////
+( function() {
+    var popupInit = function (popupBox, popupTrigger, popupContent) {
+        var popup = "#popup";
+        $(popupTrigger).magnificPopup({
+            showCloseBtn: true,
+            closeBtnInside: false,
+            callbacks: {
+                open: function() {                    
+                    $('.popup-content').removeClass('hidden');
+                },
+                close: function() {
+                    $('.popup-content').addClass('hidden');
+                    $(popup).html('');
+                },
+                
+            }
+        });
+        $(popupBox).on("click", function () {
+            popup = $(this).find(popupTrigger).attr("href");
+            $(popup).append($(this).find(popupContent));
+            $('#popup-content').lightSlider({
+                rtl:true,
+                item:1,
+                loop:true,
+                slideMargin:0,
+                cssEasing: 'easy',
+            });
+        });
+    };
+    popupInit('.popup-box','.popup-trigger','.popup-content');  //вызов функции с атрибутами
+} )();
+//////////////////////////////////EO POPUPS////////////////////////////////////////
 
 
 
