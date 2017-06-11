@@ -45,6 +45,7 @@
 
         .common-text {
           margin-bottom 100px
+          padding: 0 15px;
         }
       }
 
@@ -97,7 +98,104 @@
     }
   }
 
+
 }
+
+  .threeD-popup {
+    text-align: center;
+
+    &-gallery {
+      width: 53%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &-img {
+
+      &__prew {
+        width: 200px;
+        margin: 15px;
+      }
+
+      &__wide {
+
+      }
+    }
+
+    &-info {
+      width: 35%;
+      margin-top: 15px;
+      display: inline-block;
+      vertical-align: top;
+
+      background-color: lightGray;
+      text-align: left;
+
+      .common-text {
+        padding: 45px 50px 30px;
+
+        &_2 {
+          padding-top: 0;
+        }
+      }
+
+      &-exp {
+        width: 100%;
+        padding: 0 0 50px 0;
+        font-size: 0;
+        text-align: center;
+
+        &__text {
+          padding: 15px 0 10px;
+        }
+      }
+    }
+
+    .exp-progects {
+      width: 175px;
+      height: 175px;
+      display inline-block
+      vertical-align: top;
+
+      background-color: white;
+      text-align: center;
+
+      &__caption{
+        margin-bottom: 60px;
+        max-width: 200px;
+        position relative
+        padding-left: 20px;
+      }
+
+      &__caption:before {
+        content: '';
+        height: 35px;
+        width: 5px;
+        background-color: #ff0006;
+        position: absolute;
+        left: 0;
+        top: 5px;
+      }
+
+      .common-text {
+        color: mainBlack;
+        padding: 0 0 45px;
+      }
+
+      .bold-heading_massive {
+        color: mainRed;
+      }
+
+  }
+  .exp-progects:first-of-type {
+    margin-right: 30px;
+  }
+
+  .block-heading{
+    margin-top: 30px;
+  }
+
+  }
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -112,6 +210,19 @@
   .fifth-screen .info-plans:before {
     height: 100%;
   }
+
+  .threeD-popup-info {
+      width: 45%;
+  }
+}
+
+@media screen and (max-width: 890px) {
+    .threeD-popup-info {
+        width: 55%;
+    }
+    .threeD-popup-gallery {
+        width: 30%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -119,6 +230,25 @@
     width: 60%;
     margin-right 0
     margin-bottom: 40px;
+  }
+
+  .threeD-popup .exp-progects:first-of-type {
+      margin-bottom: 30px;
+      margin-right: auto;
+  }
+  .threeD-popup .exp-progects {
+      display: block;
+      margin: 0 auto;
+  }
+
+  .threeD-popup-info {
+      margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .threeD-popup-info .common-text {
+      padding: 45px 20px 30px;
   }
 }
 
@@ -128,4 +258,29 @@
     margin-right 0
     margin-bottom: 40px;
   }
+
+  .threeD-popup-info .common-text {
+    padding: 15px 5px 30px;
+    font-size: 12px;
+  }
+  .threeD-popup-info .common-text:last-of-type {
+    padding: 0px 5px 30px;
+  }
+
+  .threeD-popup .exp-progects {
+    width: 145px;
+    height: 145px;
+  }
+  .threeD-popup-info-exp {
+    padding: 0 0 20px 0;
+  }
+  .threeD-popup-info {
+      margin-bottom: 25px;
+  }
+  .threeD-popup .block-heading {
+    padding: 0;
+    margin-left: 0;
+    font-size: 17px;
+  }
+
 }

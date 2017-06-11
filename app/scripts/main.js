@@ -71,6 +71,7 @@ if ($(window).width() <= 1000) {
         showSection(window.location.hash, false);			//при загруке страницы определяем какой именно хэш стоит в адресе и притягиваем страницу к нужному месту
 
     });
+    
 
     $(document).scroll(function () {						//событие прокрутнки страницы
         checkSection()									//вызов функции проверяющей где находиться секция
@@ -139,45 +140,76 @@ $(document).ready(function() {
 //////////////////////////////////EO PORTFOLIO SLIDER////////////////////////////////////////
 
 
-// $('body').on('click', function (event) {
-//     console.log(event.target);
-// });
+
 
 //////////////////////////////////POPUPS////////////////////////////////////////
-( function() {
-    var popupInit = function (popupBox, popupTrigger, popupContent) {
-        var popup = "#popup";
-        $(popupTrigger).magnificPopup({
-            showCloseBtn: true,
-            closeBtnInside: false,
-            callbacks: {
-                open: function() {                    
-                    $('.popup-content').removeClass('hidden');
-                },
-                close: function() {
-                    $('.popup-content').addClass('hidden');
-                    $(popup).html('');
-                },
-                
-            }
-        });
-        $(popupBox).on("click", function () {
-            popup = $(this).find(popupTrigger).attr("href");
-            $(popup).append($(this).find(popupContent));
-            $('#popup-content').lightSlider({
-                rtl:true,
-                item:1,
-                loop:true,
-                slideMargin:0,
-                cssEasing: 'easy',
-            });
-        });
-    };
-    popupInit('.popup-box','.popup-trigger','.popup-content');  //вызов функции с атрибутами
-} )();
-//////////////////////////////////EO POPUPS////////////////////////////////////////
 
+(function(){
+    $('.popup-trigger').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content').removeClass('hidden');
+                slider = $('#popup').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
 
+            },
+            
+        }
+    });
+    $('.popup-trigger1').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content1').removeClass('hidden');
+                slider = $('#popup1').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+})();
+
+//////////////////////////////////FIFTH SCREEN POPUP/////////////////////////////////////
+(function(){
+    $('.plan-info__link').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.threeD-popup').removeClass('hidden');
+            },
+            close: function() {
+                $('.threeD-popup').addClass('hidden');
+            },
+        }
+    });
+    $(document).ready(function () {
+        $('#aniimated-thumbnials').lightGallery();
+    });
+})()
+//////////////////////////////////EO POPUPS/////////////////////////////////////
 
 //
 // Dear maintainer:
@@ -187,5 +219,5 @@ $(document).ready(function() {
 // please increment the following counter as a warning
 // to the next guy:
 //
-// total_hours_wasted_here = 16
+// total_hours_wasted_here = 30
 //
