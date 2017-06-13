@@ -68,6 +68,33 @@
   }
 }
 
+.header-nav-dots {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 900
+
+  &__link {
+    height: 8px;
+    width: 8px;
+    margin: 10px 0;
+    
+    position: relative;
+    z-index: 99;
+    
+    display: block;
+    overflow: hidden;
+    
+    background-color: #222;
+    border-radius: 30px;
+    text-indent: -999em;
+  }
+
+  &__link_current {
+    background-color: mainRed;
+  }
+}
+
 .header-nav.visible {
   display: inline-block;
   text-align center
@@ -117,6 +144,7 @@
 
   .header-nav {
     display: none;
+    height: auto;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

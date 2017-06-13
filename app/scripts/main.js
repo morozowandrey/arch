@@ -41,16 +41,15 @@ if ($(window).width() <= 1000) {
                 topEdge = $this.offset().top - 61,		//определяем верхний край секции (-200px что бы было видно 7ю секцию)
                 bottomEdge = topEdge + $this.height(),	//определяем нижний край секции
                 whereScroll = $(window).scrollTop();	//определяем где скролл на странице
-            // console.log("this is topEdge - " + topEdge);
-            // console.log("this is bottomEdge - " + bottomEdge);
-            // console.log("this is whereScroll - " + whereScroll);
 
             if (topEdge < whereScroll && bottomEdge > whereScroll){		//если края у нас в окне то мы эту секцию видим
 
                 var currentId = $this.data("section");              //определяем какую именно ссылку подсветить с помощью метода filter,
-                    reqLink = $(".header-nav__item").filter('[href="#' + currentId + '"]');	        //фильтруем по тому href который совпадет с текущей секцией на экране
-                reqLink.closest('.header-nav__item').addClass('header-nav__item_current')	//подсвечивая классом active выделяем наш пункт
-                    .siblings().removeClass('header-nav__item_current');					//удаляем посветку соседей
+                    reqLink = $(".header-nav__item").filter('[href="#' + currentId + '"]');
+                    reqLink.closest('.header-nav__item').addClass('header-nav__item_current').siblings().removeClass('header-nav__item_current');
+
+                    reqLink = $(".header-nav-dots__link").filter('[href="#' + currentId + '"]');
+                    reqLink.closest('.header-nav-dots__link').addClass('header-nav-dots__link_current').siblings().removeClass('header-nav-dots__link_current');
             }
         });
     }
@@ -61,8 +60,6 @@ if ($(window).width() <= 1000) {
 
             reqSection = $('.screen').filter('[data-section="' + direction + '"]'),		//фильтруем по href какую именно секцию показать
             reqSectionPos = reqSection.offset().top;	//определяем верхний край секции что бы при анимации проскролить именно к нему
-            // console.log("this is reqSection - " + reqSection);
-            // console.log("this is reqSectionPos - " + reqSectionPos);
 
         if (isAnimate) {
             $('body, html').animate({scrollTop: reqSectionPos}, 600);
@@ -72,7 +69,7 @@ if ($(window).width() <= 1000) {
     }
 
     $(document).ready(function () {
-        $('.header-nav__item').on('click', function(e){	//клик по навигации для пользователя
+        $('.header-nav__item, .header-nav-dots__link').on('click', function(e){	//клик по навигации для пользователя
             e.preventDefault();
             showSection($(this).attr('href'), true);		//вызывается функция showSection но у же с анимированным эффектом
         });
