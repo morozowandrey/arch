@@ -30,19 +30,29 @@
     margin-bottom: 40px;
   }
 
+  .img-overlay {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+  }
 }
 
 ///////////////////////////////////SLIDER///////////////////////////////////////////
 
 .slider {
-  margin: 0 -15px
+  // margin: 0 -15px
+
+    &-slide-imgBox {
+      position: relative;
+      overflow: hidden;
+    }
 
   .slide {
     max-height 610px
 
-    &-img {
-
-    }
 
     &-info {
       margin-top: 15px;
@@ -133,3 +143,10 @@
 }
 
 ///////////////////////////////////EO SLIDER///////////////////////////////////////////
+
+
+@media screen and (max-width: 768px) {
+  .second-screen .portfolio-slider-box {
+    padding-top: 30px;
+}
+}

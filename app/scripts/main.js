@@ -389,6 +389,54 @@ $(document).ready(function() {
             },
         }
     });
+    $('.plan-info__link4').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.threeD-popup').removeClass('hidden');
+            },
+            close: function() {
+                $('.threeD-popup').addClass('hidden');
+            },
+        }
+    });
+    $('.plan-info__link5').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.threeD-popup').removeClass('hidden');
+            },
+            close: function() {
+                $('.threeD-popup').addClass('hidden');
+            },
+        }
+    });
+    $('.plan-info__link6').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.threeD-popup').removeClass('hidden');
+            },
+            close: function() {
+                $('.threeD-popup').addClass('hidden');
+            },
+        }
+    });
+    $('.plan-info__link7').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.threeD-popup').removeClass('hidden');
+            },
+            close: function() {
+                $('.threeD-popup').addClass('hidden');
+            },
+        }
+    });
     $('.button').magnificPopup({
         showCloseBtn: true,
         closeBtnInside: false,
