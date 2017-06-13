@@ -8,7 +8,6 @@
   &-nav-box {
     float: right;
     vertical-align middle
-    margin-top 35px
     margin-right 20px
     position relative
   }
@@ -16,13 +15,16 @@
   &-nav {
     font-size 0
     width: 100%;
+    box-shadow: none;
 
     &__item, &__item_current {
-      padding: 38px 15px 8px;
+      padding: 35px 15px 16px;
       color: mainBlack;
       text-transform: uppercase;
       font-size: 12px;
-      max-width 300px
+      max-width: 300px;
+      position: relative;
+      top: 10px;
     }
 
     &__item:hover, &__item_current {
@@ -137,7 +139,10 @@
   }
 
   .header-nav__item:first-of-type {
-    margin-top: 70px;
+    // margin-top: 70px;
+  }
+  .header-nav__item, .header-nav__item_current {
+      padding: 0;
   }
 }
 

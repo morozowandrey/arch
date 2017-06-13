@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $('select').material_select();
+  });
+
 // MOBILE MENU
 $(".header-nav-mobile_open").on("click", function(e){
     $(".header-nav, .header-nav-mobile_close").addClass("visible");
@@ -37,12 +41,14 @@ if ($(window).width() <= 1000) {
                 topEdge = $this.offset().top - 61,		//определяем верхний край секции (-200px что бы было видно 7ю секцию)
                 bottomEdge = topEdge + $this.height(),	//определяем нижний край секции
                 whereScroll = $(window).scrollTop();	//определяем где скролл на странице
+            // console.log("this is topEdge - " + topEdge);
+            // console.log("this is bottomEdge - " + bottomEdge);
+            // console.log("this is whereScroll - " + whereScroll);
 
             if (topEdge < whereScroll && bottomEdge > whereScroll){		//если края у нас в окне то мы эту секцию видим
 
-                var currentId = $this.data("section");
-                reqLink = $(".header-nav__item").filter('[href="#' + currentId + '"]');	//определяем какую именно ссылку подсветить с помощью метода filter,
-                //фильтруем по тому href который совпадет с текущей секцией на экране
+                var currentId = $this.data("section");              //определяем какую именно ссылку подсветить с помощью метода filter,
+                    reqLink = $(".header-nav__item").filter('[href="#' + currentId + '"]');	        //фильтруем по тому href который совпадет с текущей секцией на экране
                 reqLink.closest('.header-nav__item').addClass('header-nav__item_current')	//подсвечивая классом active выделяем наш пункт
                     .siblings().removeClass('header-nav__item_current');					//удаляем посветку соседей
             }
@@ -51,8 +57,12 @@ if ($(window).width() <= 1000) {
 
     function showSection(section, isAnimate) {			//функция которая скролит страницу к нужной секции (секция которую нужно показать, анимированно или сразу)
         var direction = section.replace(/#/, ''),		//удаляем решетку из названия так как оно берется из атрибута href который с решеткой в названии
+            
+
             reqSection = $('.screen').filter('[data-section="' + direction + '"]'),		//фильтруем по href какую именно секцию показать
             reqSectionPos = reqSection.offset().top;	//определяем верхний край секции что бы при анимации проскролить именно к нему
+            // console.log("this is reqSection - " + reqSection);
+            // console.log("this is reqSectionPos - " + reqSectionPos);
 
         if (isAnimate) {
             $('body, html').animate({scrollTop: reqSectionPos}, 600);
@@ -64,17 +74,13 @@ if ($(window).width() <= 1000) {
     $(document).ready(function () {
         $('.header-nav__item').on('click', function(e){	//клик по навигации для пользователя
             e.preventDefault();
-
             showSection($(this).attr('href'), true);		//вызывается функция showSection но у же с анимированным эффектом
         });
-
         showSection(window.location.hash, false);			//при загруке страницы определяем какой именно хэш стоит в адресе и притягиваем страницу к нужному месту
-
     });
     
-
-    $(document).scroll(function () {						//событие прокрутнки страницы
-        checkSection()									//вызов функции проверяющей где находиться секция
+    $(document).scroll(function () {						//событие прокрутки страницы
+        checkSection()                                      //вызов функции проверяющей где находится секция
     });
 
 })()
@@ -167,13 +173,167 @@ $(document).ready(function() {
             
         }
     });
-    $('.popup-trigger1').magnificPopup({
+    $('.popup-trigger2').magnificPopup({
         showCloseBtn: true,
         closeBtnInside: false,
         callbacks: {
             open: function() {                    
-                $('.popup-content1').removeClass('hidden');
-                slider = $('#popup1').lightSlider({
+                $('.popup-content2').removeClass('hidden');
+                slider = $('#popup2').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+    $('.popup-trigger3').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content3').removeClass('hidden');
+                slider = $('#popup3').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+    $('.popup-trigger4').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content4').removeClass('hidden');
+                slider = $('#popup4').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+    $('.popup-trigger5').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content5').removeClass('hidden');
+                slider = $('#popup5').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+    $('.popup-trigger6').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content6').removeClass('hidden');
+                slider = $('#popup6').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+    $('.popup-trigger7').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content7').removeClass('hidden');
+                slider = $('#popup7').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+    $('.popup-trigger8').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content8').removeClass('hidden');
+                slider = $('#popup8').lightSlider({
+                    rtl:true,
+                    item:1,
+                    loop:true,
+                    slideMargin:0,
+                    cssEasing: 'easy',
+                });
+            },
+            close: function() {
+                $('.popup-content').addClass('hidden');
+                $('.lSSlideOuter').html('');
+
+            },
+            
+        }
+    });
+    $('.popup-trigger9').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                    
+                $('.popup-content9').removeClass('hidden');
+                slider = $('#popup9').lightSlider({
                     rtl:true,
                     item:1,
                     loop:true,
@@ -191,7 +351,7 @@ $(document).ready(function() {
     });
 })();
 
-//////////////////////////////////FIFTH SCREEN POPUP/////////////////////////////////////
+
 (function(){
     $('.plan-info__link').magnificPopup({
         showCloseBtn: true,
@@ -202,11 +362,56 @@ $(document).ready(function() {
             },
             close: function() {
                 $('.threeD-popup').addClass('hidden');
+                location.reload();
+            },
+        }
+    });
+    $('.plan-info__link2').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.threeD-popup').removeClass('hidden');
+            },
+            close: function() {
+                $('.threeD-popup').addClass('hidden');
+                location.reload();
+            },
+        }
+    });
+    $('.plan-info__link3').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.threeD-popup').removeClass('hidden');
+            },
+            close: function() {
+                $('.threeD-popup').addClass('hidden');
+                location.reload();
+            },
+        }
+    });
+    $('.button').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.booking-form').removeClass('hidden');
+            },
+            close: function() {
+                $('.booking-form').addClass('hidden');
             },
         }
     });
     $(document).ready(function () {
-        $('#aniimated-thumbnials').lightGallery();
+       $('#aniimated-thumbnials').lightGallery();
+       $('#aniimated-thumbnials2').lightGallery();
+       $('#aniimated-thumbnials3').lightGallery();
+    });
+
+    $('.booking-form__button').on("click", function(){
+        $.magnificPopup.close();
     });
 })()
 //////////////////////////////////EO POPUPS/////////////////////////////////////
