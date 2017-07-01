@@ -350,93 +350,33 @@ $(document).ready(function() {
 
 
 (function(){
-    $('.plan-info__link').magnificPopup({
+    $('.info-plans-plan1, .info-plans-plan2, .info-plans-plan3, .info-plans-plan4').magnificPopup({
         showCloseBtn: true,
         closeBtnInside: false,
         callbacks: {
             open: function() {                  
-                $('.threeD-popup').removeClass('hidden');
+                $('.popup-case').removeClass('hidden');
             },
             close: function() {
-                $('.threeD-popup').addClass('hidden');
+                $('.popup-case').addClass('hidden');
+            },
+        }
+    });
+
+    $('.threeD-popup1, .threeD-popup2, .threeD-popup3').magnificPopup({
+        showCloseBtn: true,
+        closeBtnInside: false,
+        callbacks: {
+            open: function() {                  
+                $('.popup-case').removeClass('hidden');
+            },
+            close: function() {
+                $('.popup-case').addClass('hidden');
                 location.reload();
             },
         }
     });
-    $('.plan-info__link2').magnificPopup({
-        showCloseBtn: true,
-        closeBtnInside: false,
-        callbacks: {
-            open: function() {                  
-                $('.threeD-popup').removeClass('hidden');
-            },
-            close: function() {
-                $('.threeD-popup').addClass('hidden');
-                location.reload();
-            },
-        }
-    });
-    $('.plan-info__link3').magnificPopup({
-        showCloseBtn: true,
-        closeBtnInside: false,
-        callbacks: {
-            open: function() {                  
-                $('.threeD-popup').removeClass('hidden');
-            },
-            close: function() {
-                $('.threeD-popup').addClass('hidden');
-                location.reload();
-            },
-        }
-    });
-    $('.plan-info__link4').magnificPopup({
-        showCloseBtn: true,
-        closeBtnInside: false,
-        callbacks: {
-            open: function() {                  
-                $('.threeD-popup').removeClass('hidden');
-            },
-            close: function() {
-                $('.threeD-popup').addClass('hidden');
-            },
-        }
-    });
-    $('.plan-info__link5').magnificPopup({
-        showCloseBtn: true,
-        closeBtnInside: false,
-        callbacks: {
-            open: function() {                  
-                $('.threeD-popup').removeClass('hidden');
-            },
-            close: function() {
-                $('.threeD-popup').addClass('hidden');
-            },
-        }
-    });
-    $('.plan-info__link6').magnificPopup({
-        showCloseBtn: true,
-        closeBtnInside: false,
-        callbacks: {
-            open: function() {                  
-                $('.threeD-popup').removeClass('hidden');
-            },
-            close: function() {
-                $('.threeD-popup').addClass('hidden');
-            },
-        }
-    });
-    $('.plan-info__link7').magnificPopup({
-        showCloseBtn: true,
-        closeBtnInside: false,
-        callbacks: {
-            open: function() {                  
-                $('.threeD-popup').removeClass('hidden');
-            },
-            close: function() {
-                $('.threeD-popup').addClass('hidden');
-            },
-        }
-    });
+
     $('.button').magnificPopup({
         showCloseBtn: true,
         closeBtnInside: false,
@@ -450,9 +390,9 @@ $(document).ready(function() {
         }
     });
     $(document).ready(function () {
-       $('#aniimated-thumbnials').lightGallery();
-       $('#aniimated-thumbnials2').lightGallery();
-       $('#aniimated-thumbnials3').lightGallery();
+       $('#animated-thumbnails').lightGallery();
+       $('#animated-thumbnails2').lightGallery();
+       $('#animated-thumbnails3').lightGallery();
     });
 
     $('.booking-form__button').on("click", function(){

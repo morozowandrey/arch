@@ -29,6 +29,7 @@
         text-align center
         display inline-block
         background-color white
+        cursor pointer
 
         .bold-heading {
             margin-top: 35px;
@@ -97,12 +98,11 @@
       margin-left 70px
     }
   }
-
-
 }
 
-  .threeD-popup {
+  .popup-case {
     text-align: center;
+    position: relative;
 
     &-gallery {
       width: 53%;
@@ -125,6 +125,7 @@
     &-info {
       width: 35%;
       margin-top: 15px;
+      margin-bottom 40px
       display: inline-block;
       vertical-align: top;
 
@@ -211,16 +212,16 @@
     height: 100%;
   }
 
-  .threeD-popup-info {
+  .popup-case-info {
       width: 45%;
   }
 }
 
 @media screen and (max-width: 890px) {
-    .threeD-popup-info {
+    .popup-case-info {
         width: 55%;
     }
-    .threeD-popup-gallery {
+    .popup-case-gallery {
         width: 30%;
     }
 }
@@ -232,16 +233,16 @@
     margin-bottom: 40px;
   }
 
-  .threeD-popup .exp-progects:first-of-type {
+  .popup-case .exp-progects:first-of-type {
       margin-bottom: 30px;
       margin-right: auto;
   }
-  .threeD-popup .exp-progects {
+  .popup-case .exp-progects {
       display: block;
       margin: 0 auto;
   }
 
-  .threeD-popup-info {
+  .popup-case-info {
       margin-left: 30px;
   }
   .fifth-screen .info {
@@ -253,7 +254,7 @@
 }
 
 @media screen and (max-width: 640px) {
-  .threeD-popup-info .common-text {
+  .popup-case-info .common-text {
       padding: 45px 20px 30px;
   }
 }
@@ -265,25 +266,25 @@
     margin-bottom: 40px;
   }
 
-  .threeD-popup-info .common-text {
+  .popup-case-info .common-text {
     padding: 15px 5px 30px;
     font-size: 12px;
   }
-  .threeD-popup-info .common-text:last-of-type {
+  .popup-case-info .common-text:last-of-type {
     padding: 0px 5px 30px;
   }
 
-  .threeD-popup .exp-progects {
+  .popup-case .exp-progects {
     width: 145px;
     height: 145px;
   }
-  .threeD-popup-info-exp {
+  .popup-case-info-exp {
     padding: 0 0 20px 0;
   }
-  .threeD-popup-info {
+  .popup-case-info {
       margin-bottom: 25px;
   }
-  .threeD-popup .block-heading {
+  .popup-case .block-heading {
     padding: 0;
     margin-left: 0;
     font-size: 17px;

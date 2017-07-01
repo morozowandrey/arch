@@ -36,6 +36,7 @@
         vertical-align: top;
         display inline-block
         background-color white
+        cursor pointer
 
         .bold-heading {
           margin-top 50px
@@ -109,8 +110,65 @@
     }
   }
 
+  .threeD-popup .block-heading {
+    margin-bottom 40px
+  }
 }
+.popup-case_fourthScreen {
+  top: -50px;
+}
+.price-plan {
+  width 45%
+  display inline-block
+  text-align left
 
+  &__heading {
+    margin-bottom 40px
+    margin-top 10px !important
+  }
+
+  &__caption {
+    margin-bottom 30px
+    font-size 14px
+    font-family mediumff
+    font-weight 600
+    color mainBlack
+  }
+  &-list{
+
+    &__number{
+      width: 20px;
+      display: inline-block;
+
+      margin-right 15px
+      font-family mediumff
+      font-weight 600
+      color mainBlack
+
+      &_red {
+        margin-right 1px
+        color mainRed
+      }
+
+      &_red_first {
+        margin-right 3px
+      }
+    }
+    &__item{
+      text-align left
+      cursor pointer
+
+      &-text {
+        display inline-block
+        text-decoration underline
+        font-size 14px
+      }
+      &-text:hover {
+        color mainRed
+      }
+    }
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////
 //ADAPTIVE
